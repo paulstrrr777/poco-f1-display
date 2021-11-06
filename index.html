@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .main { display: flex; flex-direction:column; max-width:1000px; 
+        .main { display: flex; flex-direction:row; max-width:1000px; 
              margin: 50px;}
+            .video , .fotos { width: 500px; border: 1px solid red; border-radius: 20px; padding: 20px;; margin: 20px;}
         .foto { width: 400px; margin: 50px; }
-        .foto.active { width: 1000px} 
+        .foto.active { width: 1000px ; position: absolute; top: 0;left: 0;} 
     </style>
 </head>
 <body>
     <div class="main">
-    <h1>Video from Serviceman</h1>
-    <video src="VID-20211106-WA0000.mp4" controls width = '300px'></video> 
+        <div class="video">
+            <h1>Video from Serviceman</h1>
+            <video src="VID-20211106-WA0000.mp4" controls width = '300px'></video> 
+        </div>
     <div class="fotos">
+        <h2>Photo after service </h2>
     <img name = "foto1" class = "foto" id = "foto1" src="1635849503851.jpg" alt="foto" >
     <img name = "foto2" class = "foto" id = "foto2" src="1635849927084.jpg" alt="foto2">
     </div>
