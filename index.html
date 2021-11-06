@@ -5,10 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .main { display: flex; flex-direction:column; max-width:1000px; 
+             margin: 50px;}
+        .foto { width: 400px; margin: 50px; }
+        .foto.active { width: 1000px} 
+    </style>
 </head>
 <body>
+    <div class="main">
     <h1>Video from Serviceman</h1>
-    <video src="VID-20211106-WA0000.mp4" controls></video> 
+    <video src="VID-20211106-WA0000.mp4" controls width = '300px'></video> 
+    <div class="fotos">
+    <img name = "foto1" class = "foto" id = "foto1" src="1635849503851.jpg" alt="foto" >
+    <img name = "foto2" class = "foto" id = "foto2" src="1635849927084.jpg" alt="foto2">
+    </div>
+</div>
+<script>
+    let slides = document.querySelector('.fotos');
+    slides.addEventListener('click',(e) => {
+        console.log(e.target);
+        let target = e.target;
+        console.log(target.name);
+        if (target.name == 'foto1') {target.classList.toggle('active');
+            console.log(target);
+            let foto2 = document.querySelector('#foto2');
+            foto2.classList.remove('active');}
+            else if (target.name == 'foto2') {target.classList.toggle('active');
+                    console.log(target);
+                    let foto1 = document.querySelector('#foto1');
+                    foto1.classList.remove('active');}
+            else alert(target.name);        
+    
+    })
+
+
+</script>
     
 </body>
 </html>
